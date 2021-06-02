@@ -1,5 +1,5 @@
-# GitHub Pages of jhallqvist
+# jhallqvist.github.io
 
 ## Project documentation
-[pyISC](https://jhallqvist.github.io/pyisc/docs/index.html)
+[pyISC](https://jhallqvist.github.io/docs/pyisc/index.html)
 
