@@ -1,0 +1,1904 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>pyisc.dhcpd.mixin API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pyisc.dhcpd.mixin</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># Copyright 2021 Jonas Hallqvist
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from ipaddress import ip_network, IPv6Network
+from typing import List, Union, TYPE_CHECKING
+if TYPE_CHECKING:
+    from pyisc.dhcpd.nodes import (
+        Subnet4, Subnet6, Pool4, Range4, Option, DhcpClass, Event, EventSet,
+        Group, Host, SharedNetwork, SubClass, Zone, Key, Include)
+
+# Methods to be inherited by objects in order to reduce duplicate code.
+# All add methods currently expects a object instance.
+
+
+class SubnetMixin:
+    def add_subnet(
+        self,
+        network: Union[&#39;Subnet4&#39;, &#39;Subnet6&#39;],
+        sort: bool = True
+    ) -&gt; None:
+        &#34;&#34;&#34;Adds a subnet to objects subnets.
+
+        Args:
+            network (Subnet4, Subnet6): The subnet object to be added.
+            sort (boolean): Sorts the list of subnets after an addition.
+        &#34;&#34;&#34;
+        self.subnets.append(network)
+        if sort:
+            self.subnets.sort(
+                key=lambda x: (
+                    isinstance(ip_network(x.network), IPv6Network),
+                    ip_network(x.network)))
+
+    def find_subnet(self, network: str) -&gt; Union[&#39;Subnet4&#39;, &#39;Subnet6&#39;]:
+        &#34;&#34;&#34;Return the first exact match from objects subnets.&#34;&#34;&#34;
+        return next((x for x in self.subnets if x.network == network), None)
+
+    def all_subnets(self) -&gt; List:
+        &#34;&#34;&#34;Return a list of all subnets with their index number&#34;&#34;&#34;
+        return [[index, entity] for index, entity in enumerate(self.subnets)]
+
+    def delete_subnet(self, network: str) -&gt; None:
+        &#34;&#34;&#34;Deletes the exact subnet from objects subnets.&#34;&#34;&#34;
+        found_subnet = self.find_subnet(network)
+        if found_subnet:
+            self.subnets.remove(found_subnet)
+            return f&#39;Deleted {found_subnet}.&#39;
+        else:
+            return &#39;No subnet found&#39;
+
+
+class RangeMixin:
+    def add_range(self, range: &#39;Range4&#39;):
+        self.ranges.append(range)
+
+    def find_range(self, key):
+        for index, dhcp_range in self.all_ranges():
+            if index == key:
+                return [index, dhcp_range]
+            return None
+
+    def all_ranges(self):
+        return [[index, entity] for index, entity in enumerate(self.ranges)]
+
+    def delete_range():
+        pass
+
+
+class PoolMixin:
+    def add_pool(self, pool: &#39;Pool4&#39;):
+        self.pools.append(pool)
+
+    def find_pool(self, key):
+        try:
+            return self.all_pools()[key]
+        except IndexError:
+            return None
+
+    def all_pools(self):
+        return [[index, entity] for index, entity in enumerate(self.pools)]
+
+    def delete_pool(self, key):
+        index, found_pool = self.find_pool(key)
+        if found_pool:
+            self.pools.remove(found_pool)
+            return f&#39;Deleted {found_pool}.&#39;
+        else:
+            return &#39;No pool found&#39;
+
+
+class OptionMixin:
+    def add_option(self, option: &#39;Option&#39;):
+        self.options.append(option)
+
+    def find_option(self, option):
+        pass
+
+    def delete_option(self, option):
+        pass
+
+
+class HostMixin:
+    def add_host(self, host: &#39;Host&#39;):
+        self.hosts.append(host)
+
+    def find_host(self, host):
+        pass
+
+    def delete_host(self, host):
+        pass
+
+
+class GroupMixin:
+    def add_group(self, group: &#39;Group&#39;):
+        self.groups.append(group)
+
+    def find_group(self, group):
+        pass
+
+    def delete_group(self, group):
+        pass
+
+
+class ClassMixin:
+    def add_class(self, class_obj: &#39;DhcpClass&#39;):
+        self.classes.append(class_obj)
+
+    def find_class(self, class_obj):
+        pass
+
+    def delete_class(self, class_obj):
+        pass
+
+
+class SubClassMixin:
+    def add_subclass(self, subclass: &#39;SubClass&#39;):
+        self.subclasses.append(subclass)
+
+    def find_subclass(self, subclass):
+        pass
+
+    def delete_subclass(self, subclass):
+        pass
+
+
+class SharedNetworkMixin:
+    def add_shared_network(self, shared_network: &#39;SharedNetwork&#39;):
+        self.shared_networks.append(shared_network)
+
+    def find_shared_network(self, shared_network):
+        pass
+
+    def delete_shared_network(self, shared_network):
+        pass
+
+
+class ZoneMixin:
+    def add_zone(self, zone: &#39;Zone&#39;):
+        self.zones.append(zone)
+
+    def find_zone(self, zone):
+        pass
+
+    def delete_zone(self, zone):
+        pass
+
+
+class KeyMixin:
+    def add_key(self, key: &#39;Key&#39;):
+        self.keys.append(key)
+
+    def find_key(self, key):
+        pass
+
+    def delete_key(self, key):
+        pass
+
+
+class IncludeMixin:
+    &#34;&#34;&#34;Methods for working with the Include class as an attribute.&#34;&#34;&#34;
+    def add_include(self, include: &#39;Include&#39;):
+        self.includes.append(include)
+
+    def find_include(self, include):
+        pass
+
+    def delete_include(self, include):
+        pass
+
+
+class EventMixin:
+    def add_event(self, key: &#39;Event&#39;):
+        self.events.append(key)
+
+    def find_event(self, key):
+        pass
+
+    def delete_event(self, key):
+        pass
+
+
+class EventSetMixin:
+    def add_event_set(self, key: &#39;EventSet&#39;):
+        self.event_sets.append(key)
+
+    def find_event_set(self, key):
+        pass
+
+    def delete_event_set(self, key):
+        pass
+
+
+class Permissions:
+    &#34;&#34;&#34;Contains all inheritable non-pool permission statements.
+
+    Allowed values are: &#39;allow&#39;, &#39;deny&#39; and in some cases &#39;ignore&#39;.
+    For a description of the various attributes refer to the ISC KB for DHCP.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        bootp:          Union[str, None] = None,
+        booting:        Union[str, None] = None,
+        duplicates:     Union[str, None] = None,
+        declines:       Union[str, None] = None,
+        client_updates: Union[str, None] = None,
+        leasequery:     Union[str, None] = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;Initialize attributes for the class.&#34;&#34;&#34;
+        self.bootp = bootp
+        self.booting = booting
+        self.duplicates = duplicates
+        self.declines = declines
+        self.client_updates = client_updates
+        self.leasequery = leasequery
+        super().__init__()
+
+
+class Parameters:
+    &#34;&#34;&#34;Contains all inheritable ISC Parameters.
+
+    Parameters not found in this class belong in certain scopes and hence are
+    declared as an attribute directly in that class.
+
+    For a description of the various attributes refer to the ISC KB for DHCP.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        # abandon_lease_time=None,
+        adaptive_lease_time_threshold: int = None,
+        # always_broadcast=None,
+        always_reply_rfc1048=None,
+        # authoritative=None,
+        boot_unknown_clients=None,
+        check_secs_byte_order=None,
+        # db_time_format=None,
+        ddns_hostname=None,
+        ddns_domainname=None,
+        # ddns_dual_stack_mixed_mode=None,
+        # ddns_guard_id_must_match=None,
+        ddns_local_address4=None,
+        ddns_local_address6=None,
+        # ddns_other_guard_is_dynamic=None,
+        ddns_rev_domainname=None,
+        ddns_update_style=None,
+        ddns_updates=None,
+        default_lease_time=None,
+        delayed_ack=None,
+        max_ack_delay=None,
+        dhcp_cache_threshold=None,
+        do_forward_updates=None,
+        dont_use_fsync=None,
+        dynamic_bootp_lease_cutoff=None,
+        dynamic_bootp_lease_length=None,
+        echo_client_id=None,
+        filename=None,
+        fixed_address=None,
+        fixed_address6=None,
+        fixed_prefix6=None,
+        get_lease_hostnames=None,
+        hardware_type=None,
+        hardware_address=None,
+        ignore_client_uids=None,
+        infinite_is_reserved=None,
+        # lease_file_name=None,
+        # dhcpv6_lease_file_name=None,
+        lease_id_format=None,
+        limit_addrs_per_ia=None,
+        # local_port=None,
+        # local_address=None,
+        # local_address6=None,
+        # bind_local_address6=None,
+        # log_facility=None,
+        log_threshold_high=None,
+        log_threshold_low=None,
+        max_lease_time=None,
+        min_lease_time=None,
+        min_secs=None,
+        next_server=None,
+        # omapi_port=None,
+        one_lease_per_client=None,
+        # persist_eui_64_leases=None,
+        # pid_file_name=None,
+        # dhcpv6_pid_file_name=None,
+        ping_check=None,
+        ping_cltt_secs=None,
+        ping_timeout=None,
+        ping_timeout_ms=None,
+        preferred_lifetime=None,
+        prefix_length_mode=None,
+        # release_on_roam=None,
+        # remote_port=None,
+        server_identifier=None,
+        # server_id_check=None,
+        server_name=None,
+        dhcpv6_set_tee_times=None,
+        site_option_space=None,
+        stash_agent_options=None,
+        # update_conflict_detection=None,
+        update_optimization=None,
+        update_static_leases=None,
+        # use_eui_64=None,
+        use_host_decl_names=None,
+        use_lease_addr_for_default_route=None,
+        vendor_option_space=None,
+
+    ) -&gt; None:
+        &#34;&#34;&#34;Initialize attributes for the class.&#34;&#34;&#34;
+        # self.abandon_lease_time = abandon_lease_time
+        self.adaptive_lease_time_threshold = adaptive_lease_time_threshold
+        # self.always_broadcast = always_broadcast
+        self.always_reply_rfc1048 = always_reply_rfc1048
+        # self.authoritative = authoritative
+        self.boot_unknown_clients = boot_unknown_clients
+        self.check_secs_byte_order = check_secs_byte_order
+        # self.db_time_format = db_time_format
+        self.ddns_hostname = ddns_hostname
+        self.ddns_domainname = ddns_domainname
+        # self.ddns_dual_stack_mixed_mode = ddns_dual_stack_mixed_mode
+        # self.ddns_guard_id_must_match = ddns_guard_id_must_match
+        self.ddns_local_address4 = ddns_local_address4
+        self.ddns_local_address6 = ddns_local_address6
+        # self.ddns_other_guard_is_dynamic = ddns_other_guard_is_dynamic
+        self.ddns_rev_domainname = ddns_rev_domainname
+        self.ddns_update_style = ddns_update_style
+        self.ddns_updates = ddns_updates
+        self.default_lease_time = default_lease_time
+        self.delayed_ack = delayed_ack
+        self.max_ack_delay = max_ack_delay
+        self.dhcp_cache_threshold = dhcp_cache_threshold
+        self.do_forward_updates = do_forward_updates
+        self.dont_use_fsync = dont_use_fsync
+        self.dynamic_bootp_lease_cutoff = dynamic_bootp_lease_cutoff
+        self.dynamic_bootp_lease_length = dynamic_bootp_lease_length
+        self.echo_client_id = echo_client_id
+        self.filename = filename
+        self.fixed_address = fixed_address
+        self.fixed_address6 = fixed_address6
+        self.fixed_prefix6 = fixed_prefix6
+        self.get_lease_hostnames = get_lease_hostnames
+        self.hardware_type = hardware_type
+        self.hardware_address = hardware_address
+        self.ignore_client_uids = ignore_client_uids
+        self.infinite_is_reserved = infinite_is_reserved
+        # self.lease_file_name = lease_file_name
+        # self.dhcpv6_lease_file_name = dhcpv6_lease_file_name
+        self.lease_id_format = lease_id_format
+        self.limit_addrs_per_ia = limit_addrs_per_ia
+        # self.local_port = local_port
+        # self.local_address = local_address
+        # self.local_address6 = local_address6
+        # self.bind_local_address6 = bind_local_address6
+        # self.log_facility = log_facility
+        self.log_threshold_high = log_threshold_high
+        self.log_threshold_low = log_threshold_low
+        self.max_lease_time = max_lease_time
+        self.min_lease_time = min_lease_time
+        self.min_secs = min_secs
+        self.next_server = next_server
+        # self.omapi_port = omapi_port
+        self.one_lease_per_client = one_lease_per_client
+        # self.persist_eui_64_leases = persist_eui_64_leases
+        # self.pid_file_name = pid_file_name
+        # self.dhcpv6_pid_file_name = dhcpv6_pid_file_name
+        self.ping_check = ping_check
+        self.ping_cltt_secs = ping_cltt_secs
+        self.ping_timeout = ping_timeout
+        self.ping_timeout_ms = ping_timeout_ms
+        self.preferred_lifetime = preferred_lifetime
+        self.prefix_length_mode = prefix_length_mode
+        # self.release_on_roam = release_on_roam
+        # self.remote_port = remote_port
+        self.server_identifier = server_identifier
+        # self.server_id_check = server_id_check
+        self.server_name = server_name
+        self.dhcpv6_set_tee_times = dhcpv6_set_tee_times
+        self.site_option_space = site_option_space
+        self.stash_agent_options = stash_agent_options
+        # self.update_conflict_detection = update_conflict_detection
+        self.update_optimization = update_optimization
+        self.update_static_leases = update_static_leases
+        # self.use_eui_64 = use_eui_64
+        self.use_host_decl_names = use_host_decl_names
+        self.use_lease_addr_for_default_route = \
+            use_lease_addr_for_default_route
+        self.vendor_option_space = vendor_option_space
+        super().__init__()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pyisc.dhcpd.mixin.ClassMixin"><code class="flex name class">
+<span>class <span class="ident">ClassMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ClassMixin:
+    def add_class(self, class_obj: &#39;DhcpClass&#39;):
+        self.classes.append(class_obj)
+
+    def find_class(self, class_obj):
+        pass
+
+    def delete_class(self, class_obj):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.ClassMixin.add_class"><code class="name flex">
+<span>def <span class="ident">add_class</span></span>(<span>self, class_obj: DhcpClass)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_class(self, class_obj: &#39;DhcpClass&#39;):
+    self.classes.append(class_obj)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.ClassMixin.delete_class"><code class="name flex">
+<span>def <span class="ident">delete_class</span></span>(<span>self, class_obj)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_class(self, class_obj):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.ClassMixin.find_class"><code class="name flex">
+<span>def <span class="ident">find_class</span></span>(<span>self, class_obj)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_class(self, class_obj):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.EventMixin"><code class="flex name class">
+<span>class <span class="ident">EventMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EventMixin:
+    def add_event(self, key: &#39;Event&#39;):
+        self.events.append(key)
+
+    def find_event(self, key):
+        pass
+
+    def delete_event(self, key):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.EventMixin.add_event"><code class="name flex">
+<span>def <span class="ident">add_event</span></span>(<span>self, key: Event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_event(self, key: &#39;Event&#39;):
+    self.events.append(key)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.EventMixin.delete_event"><code class="name flex">
+<span>def <span class="ident">delete_event</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_event(self, key):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.EventMixin.find_event"><code class="name flex">
+<span>def <span class="ident">find_event</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_event(self, key):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.EventSetMixin"><code class="flex name class">
+<span>class <span class="ident">EventSetMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EventSetMixin:
+    def add_event_set(self, key: &#39;EventSet&#39;):
+        self.event_sets.append(key)
+
+    def find_event_set(self, key):
+        pass
+
+    def delete_event_set(self, key):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Event" href="nodes.html#pyisc.dhcpd.nodes.Event">Event</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.EventSetMixin.add_event_set"><code class="name flex">
+<span>def <span class="ident">add_event_set</span></span>(<span>self, key: EventSet)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_event_set(self, key: &#39;EventSet&#39;):
+    self.event_sets.append(key)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.EventSetMixin.delete_event_set"><code class="name flex">
+<span>def <span class="ident">delete_event_set</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_event_set(self, key):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.EventSetMixin.find_event_set"><code class="name flex">
+<span>def <span class="ident">find_event_set</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_event_set(self, key):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.GroupMixin"><code class="flex name class">
+<span>class <span class="ident">GroupMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GroupMixin:
+    def add_group(self, group: &#39;Group&#39;):
+        self.groups.append(group)
+
+    def find_group(self, group):
+        pass
+
+    def delete_group(self, group):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.GroupMixin.add_group"><code class="name flex">
+<span>def <span class="ident">add_group</span></span>(<span>self, group: Group)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_group(self, group: &#39;Group&#39;):
+    self.groups.append(group)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.GroupMixin.delete_group"><code class="name flex">
+<span>def <span class="ident">delete_group</span></span>(<span>self, group)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_group(self, group):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.GroupMixin.find_group"><code class="name flex">
+<span>def <span class="ident">find_group</span></span>(<span>self, group)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_group(self, group):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.HostMixin"><code class="flex name class">
+<span>class <span class="ident">HostMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class HostMixin:
+    def add_host(self, host: &#39;Host&#39;):
+        self.hosts.append(host)
+
+    def find_host(self, host):
+        pass
+
+    def delete_host(self, host):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+<li><a title="pyisc.dhcpd.nodes.Group" href="nodes.html#pyisc.dhcpd.nodes.Group">Group</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.HostMixin.add_host"><code class="name flex">
+<span>def <span class="ident">add_host</span></span>(<span>self, host: Host)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_host(self, host: &#39;Host&#39;):
+    self.hosts.append(host)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.HostMixin.delete_host"><code class="name flex">
+<span>def <span class="ident">delete_host</span></span>(<span>self, host)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_host(self, host):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.HostMixin.find_host"><code class="name flex">
+<span>def <span class="ident">find_host</span></span>(<span>self, host)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_host(self, host):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.IncludeMixin"><code class="flex name class">
+<span>class <span class="ident">IncludeMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Methods for working with the Include class as an attribute.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IncludeMixin:
+    &#34;&#34;&#34;Methods for working with the Include class as an attribute.&#34;&#34;&#34;
+    def add_include(self, include: &#39;Include&#39;):
+        self.includes.append(include)
+
+    def find_include(self, include):
+        pass
+
+    def delete_include(self, include):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.IncludeMixin.add_include"><code class="name flex">
+<span>def <span class="ident">add_include</span></span>(<span>self, include: Include)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_include(self, include: &#39;Include&#39;):
+    self.includes.append(include)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.IncludeMixin.delete_include"><code class="name flex">
+<span>def <span class="ident">delete_include</span></span>(<span>self, include)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_include(self, include):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.IncludeMixin.find_include"><code class="name flex">
+<span>def <span class="ident">find_include</span></span>(<span>self, include)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_include(self, include):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.KeyMixin"><code class="flex name class">
+<span>class <span class="ident">KeyMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class KeyMixin:
+    def add_key(self, key: &#39;Key&#39;):
+        self.keys.append(key)
+
+    def find_key(self, key):
+        pass
+
+    def delete_key(self, key):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.KeyMixin.add_key"><code class="name flex">
+<span>def <span class="ident">add_key</span></span>(<span>self, key: Key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_key(self, key: &#39;Key&#39;):
+    self.keys.append(key)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.KeyMixin.delete_key"><code class="name flex">
+<span>def <span class="ident">delete_key</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_key(self, key):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.KeyMixin.find_key"><code class="name flex">
+<span>def <span class="ident">find_key</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_key(self, key):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.OptionMixin"><code class="flex name class">
+<span>class <span class="ident">OptionMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OptionMixin:
+    def add_option(self, option: &#39;Option&#39;):
+        self.options.append(option)
+
+    def find_option(self, option):
+        pass
+
+    def delete_option(self, option):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+<li><a title="pyisc.dhcpd.nodes.Group" href="nodes.html#pyisc.dhcpd.nodes.Group">Group</a></li>
+<li><a title="pyisc.dhcpd.nodes.SharedNetwork" href="nodes.html#pyisc.dhcpd.nodes.SharedNetwork">SharedNetwork</a></li>
+<li><a title="pyisc.dhcpd.nodes.SubClass" href="nodes.html#pyisc.dhcpd.nodes.SubClass">SubClass</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet4" href="nodes.html#pyisc.dhcpd.nodes.Subnet4">Subnet4</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet6" href="nodes.html#pyisc.dhcpd.nodes.Subnet6">Subnet6</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.OptionMixin.add_option"><code class="name flex">
+<span>def <span class="ident">add_option</span></span>(<span>self, option: Option)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_option(self, option: &#39;Option&#39;):
+    self.options.append(option)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.OptionMixin.delete_option"><code class="name flex">
+<span>def <span class="ident">delete_option</span></span>(<span>self, option)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_option(self, option):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.OptionMixin.find_option"><code class="name flex">
+<span>def <span class="ident">find_option</span></span>(<span>self, option)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_option(self, option):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.Parameters"><code class="flex name class">
+<span>class <span class="ident">Parameters</span></span>
+<span>(</span><span>adaptive_lease_time_threshold: int = None, always_reply_rfc1048=None, boot_unknown_clients=None, check_secs_byte_order=None, ddns_hostname=None, ddns_domainname=None, ddns_local_address4=None, ddns_local_address6=None, ddns_rev_domainname=None, ddns_update_style=None, ddns_updates=None, default_lease_time=None, delayed_ack=None, max_ack_delay=None, dhcp_cache_threshold=None, do_forward_updates=None, dont_use_fsync=None, dynamic_bootp_lease_cutoff=None, dynamic_bootp_lease_length=None, echo_client_id=None, filename=None, fixed_address=None, fixed_address6=None, fixed_prefix6=None, get_lease_hostnames=None, hardware_type=None, hardware_address=None, ignore_client_uids=None, infinite_is_reserved=None, lease_id_format=None, limit_addrs_per_ia=None, log_threshold_high=None, log_threshold_low=None, max_lease_time=None, min_lease_time=None, min_secs=None, next_server=None, one_lease_per_client=None, ping_check=None, ping_cltt_secs=None, ping_timeout=None, ping_timeout_ms=None, preferred_lifetime=None, prefix_length_mode=None, server_identifier=None, server_name=None, dhcpv6_set_tee_times=None, site_option_space=None, stash_agent_options=None, update_optimization=None, update_static_leases=None, use_host_decl_names=None, use_lease_addr_for_default_route=None, vendor_option_space=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Contains all inheritable ISC Parameters.</p>
+<p>Parameters not found in this class belong in certain scopes and hence are
+declared as an attribute directly in that class.</p>
+<p>For a description of the various attributes refer to the ISC KB for DHCP.</p>
+<p>Initialize attributes for the class.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Parameters:
+    &#34;&#34;&#34;Contains all inheritable ISC Parameters.
+
+    Parameters not found in this class belong in certain scopes and hence are
+    declared as an attribute directly in that class.
+
+    For a description of the various attributes refer to the ISC KB for DHCP.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        # abandon_lease_time=None,
+        adaptive_lease_time_threshold: int = None,
+        # always_broadcast=None,
+        always_reply_rfc1048=None,
+        # authoritative=None,
+        boot_unknown_clients=None,
+        check_secs_byte_order=None,
+        # db_time_format=None,
+        ddns_hostname=None,
+        ddns_domainname=None,
+        # ddns_dual_stack_mixed_mode=None,
+        # ddns_guard_id_must_match=None,
+        ddns_local_address4=None,
+        ddns_local_address6=None,
+        # ddns_other_guard_is_dynamic=None,
+        ddns_rev_domainname=None,
+        ddns_update_style=None,
+        ddns_updates=None,
+        default_lease_time=None,
+        delayed_ack=None,
+        max_ack_delay=None,
+        dhcp_cache_threshold=None,
+        do_forward_updates=None,
+        dont_use_fsync=None,
+        dynamic_bootp_lease_cutoff=None,
+        dynamic_bootp_lease_length=None,
+        echo_client_id=None,
+        filename=None,
+        fixed_address=None,
+        fixed_address6=None,
+        fixed_prefix6=None,
+        get_lease_hostnames=None,
+        hardware_type=None,
+        hardware_address=None,
+        ignore_client_uids=None,
+        infinite_is_reserved=None,
+        # lease_file_name=None,
+        # dhcpv6_lease_file_name=None,
+        lease_id_format=None,
+        limit_addrs_per_ia=None,
+        # local_port=None,
+        # local_address=None,
+        # local_address6=None,
+        # bind_local_address6=None,
+        # log_facility=None,
+        log_threshold_high=None,
+        log_threshold_low=None,
+        max_lease_time=None,
+        min_lease_time=None,
+        min_secs=None,
+        next_server=None,
+        # omapi_port=None,
+        one_lease_per_client=None,
+        # persist_eui_64_leases=None,
+        # pid_file_name=None,
+        # dhcpv6_pid_file_name=None,
+        ping_check=None,
+        ping_cltt_secs=None,
+        ping_timeout=None,
+        ping_timeout_ms=None,
+        preferred_lifetime=None,
+        prefix_length_mode=None,
+        # release_on_roam=None,
+        # remote_port=None,
+        server_identifier=None,
+        # server_id_check=None,
+        server_name=None,
+        dhcpv6_set_tee_times=None,
+        site_option_space=None,
+        stash_agent_options=None,
+        # update_conflict_detection=None,
+        update_optimization=None,
+        update_static_leases=None,
+        # use_eui_64=None,
+        use_host_decl_names=None,
+        use_lease_addr_for_default_route=None,
+        vendor_option_space=None,
+
+    ) -&gt; None:
+        &#34;&#34;&#34;Initialize attributes for the class.&#34;&#34;&#34;
+        # self.abandon_lease_time = abandon_lease_time
+        self.adaptive_lease_time_threshold = adaptive_lease_time_threshold
+        # self.always_broadcast = always_broadcast
+        self.always_reply_rfc1048 = always_reply_rfc1048
+        # self.authoritative = authoritative
+        self.boot_unknown_clients = boot_unknown_clients
+        self.check_secs_byte_order = check_secs_byte_order
+        # self.db_time_format = db_time_format
+        self.ddns_hostname = ddns_hostname
+        self.ddns_domainname = ddns_domainname
+        # self.ddns_dual_stack_mixed_mode = ddns_dual_stack_mixed_mode
+        # self.ddns_guard_id_must_match = ddns_guard_id_must_match
+        self.ddns_local_address4 = ddns_local_address4
+        self.ddns_local_address6 = ddns_local_address6
+        # self.ddns_other_guard_is_dynamic = ddns_other_guard_is_dynamic
+        self.ddns_rev_domainname = ddns_rev_domainname
+        self.ddns_update_style = ddns_update_style
+        self.ddns_updates = ddns_updates
+        self.default_lease_time = default_lease_time
+        self.delayed_ack = delayed_ack
+        self.max_ack_delay = max_ack_delay
+        self.dhcp_cache_threshold = dhcp_cache_threshold
+        self.do_forward_updates = do_forward_updates
+        self.dont_use_fsync = dont_use_fsync
+        self.dynamic_bootp_lease_cutoff = dynamic_bootp_lease_cutoff
+        self.dynamic_bootp_lease_length = dynamic_bootp_lease_length
+        self.echo_client_id = echo_client_id
+        self.filename = filename
+        self.fixed_address = fixed_address
+        self.fixed_address6 = fixed_address6
+        self.fixed_prefix6 = fixed_prefix6
+        self.get_lease_hostnames = get_lease_hostnames
+        self.hardware_type = hardware_type
+        self.hardware_address = hardware_address
+        self.ignore_client_uids = ignore_client_uids
+        self.infinite_is_reserved = infinite_is_reserved
+        # self.lease_file_name = lease_file_name
+        # self.dhcpv6_lease_file_name = dhcpv6_lease_file_name
+        self.lease_id_format = lease_id_format
+        self.limit_addrs_per_ia = limit_addrs_per_ia
+        # self.local_port = local_port
+        # self.local_address = local_address
+        # self.local_address6 = local_address6
+        # self.bind_local_address6 = bind_local_address6
+        # self.log_facility = log_facility
+        self.log_threshold_high = log_threshold_high
+        self.log_threshold_low = log_threshold_low
+        self.max_lease_time = max_lease_time
+        self.min_lease_time = min_lease_time
+        self.min_secs = min_secs
+        self.next_server = next_server
+        # self.omapi_port = omapi_port
+        self.one_lease_per_client = one_lease_per_client
+        # self.persist_eui_64_leases = persist_eui_64_leases
+        # self.pid_file_name = pid_file_name
+        # self.dhcpv6_pid_file_name = dhcpv6_pid_file_name
+        self.ping_check = ping_check
+        self.ping_cltt_secs = ping_cltt_secs
+        self.ping_timeout = ping_timeout
+        self.ping_timeout_ms = ping_timeout_ms
+        self.preferred_lifetime = preferred_lifetime
+        self.prefix_length_mode = prefix_length_mode
+        # self.release_on_roam = release_on_roam
+        # self.remote_port = remote_port
+        self.server_identifier = server_identifier
+        # self.server_id_check = server_id_check
+        self.server_name = server_name
+        self.dhcpv6_set_tee_times = dhcpv6_set_tee_times
+        self.site_option_space = site_option_space
+        self.stash_agent_options = stash_agent_options
+        # self.update_conflict_detection = update_conflict_detection
+        self.update_optimization = update_optimization
+        self.update_static_leases = update_static_leases
+        # self.use_eui_64 = use_eui_64
+        self.use_host_decl_names = use_host_decl_names
+        self.use_lease_addr_for_default_route = \
+            use_lease_addr_for_default_route
+        self.vendor_option_space = vendor_option_space
+        super().__init__()</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+<li><a title="pyisc.dhcpd.nodes.Group" href="nodes.html#pyisc.dhcpd.nodes.Group">Group</a></li>
+<li><a title="pyisc.dhcpd.nodes.Host" href="nodes.html#pyisc.dhcpd.nodes.Host">Host</a></li>
+<li><a title="pyisc.dhcpd.nodes.SharedNetwork" href="nodes.html#pyisc.dhcpd.nodes.SharedNetwork">SharedNetwork</a></li>
+<li><a title="pyisc.dhcpd.nodes.SubClass" href="nodes.html#pyisc.dhcpd.nodes.SubClass">SubClass</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet4" href="nodes.html#pyisc.dhcpd.nodes.Subnet4">Subnet4</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet6" href="nodes.html#pyisc.dhcpd.nodes.Subnet6">Subnet6</a></li>
+</ul>
+</dd>
+<dt id="pyisc.dhcpd.mixin.Permissions"><code class="flex name class">
+<span>class <span class="ident">Permissions</span></span>
+<span>(</span><span>bootp: Union[str, NoneType] = None, booting: Union[str, NoneType] = None, duplicates: Union[str, NoneType] = None, declines: Union[str, NoneType] = None, client_updates: Union[str, NoneType] = None, leasequery: Union[str, NoneType] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Contains all inheritable non-pool permission statements.</p>
+<p>Allowed values are: 'allow', 'deny' and in some cases 'ignore'.
+For a description of the various attributes refer to the ISC KB for DHCP.</p>
+<p>Initialize attributes for the class.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Permissions:
+    &#34;&#34;&#34;Contains all inheritable non-pool permission statements.
+
+    Allowed values are: &#39;allow&#39;, &#39;deny&#39; and in some cases &#39;ignore&#39;.
+    For a description of the various attributes refer to the ISC KB for DHCP.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        bootp:          Union[str, None] = None,
+        booting:        Union[str, None] = None,
+        duplicates:     Union[str, None] = None,
+        declines:       Union[str, None] = None,
+        client_updates: Union[str, None] = None,
+        leasequery:     Union[str, None] = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;Initialize attributes for the class.&#34;&#34;&#34;
+        self.bootp = bootp
+        self.booting = booting
+        self.duplicates = duplicates
+        self.declines = declines
+        self.client_updates = client_updates
+        self.leasequery = leasequery
+        super().__init__()</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+<li><a title="pyisc.dhcpd.nodes.SharedNetwork" href="nodes.html#pyisc.dhcpd.nodes.SharedNetwork">SharedNetwork</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet4" href="nodes.html#pyisc.dhcpd.nodes.Subnet4">Subnet4</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet6" href="nodes.html#pyisc.dhcpd.nodes.Subnet6">Subnet6</a></li>
+</ul>
+</dd>
+<dt id="pyisc.dhcpd.mixin.PoolMixin"><code class="flex name class">
+<span>class <span class="ident">PoolMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PoolMixin:
+    def add_pool(self, pool: &#39;Pool4&#39;):
+        self.pools.append(pool)
+
+    def find_pool(self, key):
+        try:
+            return self.all_pools()[key]
+        except IndexError:
+            return None
+
+    def all_pools(self):
+        return [[index, entity] for index, entity in enumerate(self.pools)]
+
+    def delete_pool(self, key):
+        index, found_pool = self.find_pool(key)
+        if found_pool:
+            self.pools.remove(found_pool)
+            return f&#39;Deleted {found_pool}.&#39;
+        else:
+            return &#39;No pool found&#39;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.SharedNetwork" href="nodes.html#pyisc.dhcpd.nodes.SharedNetwork">SharedNetwork</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet4" href="nodes.html#pyisc.dhcpd.nodes.Subnet4">Subnet4</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet6" href="nodes.html#pyisc.dhcpd.nodes.Subnet6">Subnet6</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.PoolMixin.add_pool"><code class="name flex">
+<span>def <span class="ident">add_pool</span></span>(<span>self, pool: Pool4)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_pool(self, pool: &#39;Pool4&#39;):
+    self.pools.append(pool)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.PoolMixin.all_pools"><code class="name flex">
+<span>def <span class="ident">all_pools</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def all_pools(self):
+    return [[index, entity] for index, entity in enumerate(self.pools)]</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.PoolMixin.delete_pool"><code class="name flex">
+<span>def <span class="ident">delete_pool</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_pool(self, key):
+    index, found_pool = self.find_pool(key)
+    if found_pool:
+        self.pools.remove(found_pool)
+        return f&#39;Deleted {found_pool}.&#39;
+    else:
+        return &#39;No pool found&#39;</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.PoolMixin.find_pool"><code class="name flex">
+<span>def <span class="ident">find_pool</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_pool(self, key):
+    try:
+        return self.all_pools()[key]
+    except IndexError:
+        return None</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.RangeMixin"><code class="flex name class">
+<span>class <span class="ident">RangeMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RangeMixin:
+    def add_range(self, range: &#39;Range4&#39;):
+        self.ranges.append(range)
+
+    def find_range(self, key):
+        for index, dhcp_range in self.all_ranges():
+            if index == key:
+                return [index, dhcp_range]
+            return None
+
+    def all_ranges(self):
+        return [[index, entity] for index, entity in enumerate(self.ranges)]
+
+    def delete_range():
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Pool4" href="nodes.html#pyisc.dhcpd.nodes.Pool4">Pool4</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet4" href="nodes.html#pyisc.dhcpd.nodes.Subnet4">Subnet4</a></li>
+<li><a title="pyisc.dhcpd.nodes.Subnet6" href="nodes.html#pyisc.dhcpd.nodes.Subnet6">Subnet6</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.RangeMixin.add_range"><code class="name flex">
+<span>def <span class="ident">add_range</span></span>(<span>self, range: Range4)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_range(self, range: &#39;Range4&#39;):
+    self.ranges.append(range)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.RangeMixin.all_ranges"><code class="name flex">
+<span>def <span class="ident">all_ranges</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def all_ranges(self):
+    return [[index, entity] for index, entity in enumerate(self.ranges)]</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.RangeMixin.delete_range"><code class="name flex">
+<span>def <span class="ident">delete_range</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_range():
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.RangeMixin.find_range"><code class="name flex">
+<span>def <span class="ident">find_range</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_range(self, key):
+    for index, dhcp_range in self.all_ranges():
+        if index == key:
+            return [index, dhcp_range]
+        return None</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SharedNetworkMixin"><code class="flex name class">
+<span>class <span class="ident">SharedNetworkMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SharedNetworkMixin:
+    def add_shared_network(self, shared_network: &#39;SharedNetwork&#39;):
+        self.shared_networks.append(shared_network)
+
+    def find_shared_network(self, shared_network):
+        pass
+
+    def delete_shared_network(self, shared_network):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+<li><a title="pyisc.dhcpd.nodes.Group" href="nodes.html#pyisc.dhcpd.nodes.Group">Group</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.SharedNetworkMixin.add_shared_network"><code class="name flex">
+<span>def <span class="ident">add_shared_network</span></span>(<span>self, shared_network: SharedNetwork)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_shared_network(self, shared_network: &#39;SharedNetwork&#39;):
+    self.shared_networks.append(shared_network)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SharedNetworkMixin.delete_shared_network"><code class="name flex">
+<span>def <span class="ident">delete_shared_network</span></span>(<span>self, shared_network)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_shared_network(self, shared_network):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SharedNetworkMixin.find_shared_network"><code class="name flex">
+<span>def <span class="ident">find_shared_network</span></span>(<span>self, shared_network)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_shared_network(self, shared_network):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubClassMixin"><code class="flex name class">
+<span>class <span class="ident">SubClassMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SubClassMixin:
+    def add_subclass(self, subclass: &#39;SubClass&#39;):
+        self.subclasses.append(subclass)
+
+    def find_subclass(self, subclass):
+        pass
+
+    def delete_subclass(self, subclass):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.SubClassMixin.add_subclass"><code class="name flex">
+<span>def <span class="ident">add_subclass</span></span>(<span>self, subclass: SubClass)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_subclass(self, subclass: &#39;SubClass&#39;):
+    self.subclasses.append(subclass)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubClassMixin.delete_subclass"><code class="name flex">
+<span>def <span class="ident">delete_subclass</span></span>(<span>self, subclass)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_subclass(self, subclass):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubClassMixin.find_subclass"><code class="name flex">
+<span>def <span class="ident">find_subclass</span></span>(<span>self, subclass)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_subclass(self, subclass):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubnetMixin"><code class="flex name class">
+<span>class <span class="ident">SubnetMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SubnetMixin:
+    def add_subnet(
+        self,
+        network: Union[&#39;Subnet4&#39;, &#39;Subnet6&#39;],
+        sort: bool = True
+    ) -&gt; None:
+        &#34;&#34;&#34;Adds a subnet to objects subnets.
+
+        Args:
+            network (Subnet4, Subnet6): The subnet object to be added.
+            sort (boolean): Sorts the list of subnets after an addition.
+        &#34;&#34;&#34;
+        self.subnets.append(network)
+        if sort:
+            self.subnets.sort(
+                key=lambda x: (
+                    isinstance(ip_network(x.network), IPv6Network),
+                    ip_network(x.network)))
+
+    def find_subnet(self, network: str) -&gt; Union[&#39;Subnet4&#39;, &#39;Subnet6&#39;]:
+        &#34;&#34;&#34;Return the first exact match from objects subnets.&#34;&#34;&#34;
+        return next((x for x in self.subnets if x.network == network), None)
+
+    def all_subnets(self) -&gt; List:
+        &#34;&#34;&#34;Return a list of all subnets with their index number&#34;&#34;&#34;
+        return [[index, entity] for index, entity in enumerate(self.subnets)]
+
+    def delete_subnet(self, network: str) -&gt; None:
+        &#34;&#34;&#34;Deletes the exact subnet from objects subnets.&#34;&#34;&#34;
+        found_subnet = self.find_subnet(network)
+        if found_subnet:
+            self.subnets.remove(found_subnet)
+            return f&#39;Deleted {found_subnet}.&#39;
+        else:
+            return &#39;No subnet found&#39;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+<li><a title="pyisc.dhcpd.nodes.Group" href="nodes.html#pyisc.dhcpd.nodes.Group">Group</a></li>
+<li><a title="pyisc.dhcpd.nodes.SharedNetwork" href="nodes.html#pyisc.dhcpd.nodes.SharedNetwork">SharedNetwork</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.SubnetMixin.add_subnet"><code class="name flex">
+<span>def <span class="ident">add_subnet</span></span>(<span>self, network: Union[_ForwardRef('Subnet4'), _ForwardRef('Subnet6')], sort: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adds a subnet to objects subnets.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>network</code></strong> :&ensp;<code>Subnet4, Subnet6</code></dt>
+<dd>The subnet object to be added.</dd>
+<dt><strong><code>sort</code></strong> :&ensp;<code>boolean</code></dt>
+<dd>Sorts the list of subnets after an addition.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_subnet(
+    self,
+    network: Union[&#39;Subnet4&#39;, &#39;Subnet6&#39;],
+    sort: bool = True
+) -&gt; None:
+    &#34;&#34;&#34;Adds a subnet to objects subnets.
+
+    Args:
+        network (Subnet4, Subnet6): The subnet object to be added.
+        sort (boolean): Sorts the list of subnets after an addition.
+    &#34;&#34;&#34;
+    self.subnets.append(network)
+    if sort:
+        self.subnets.sort(
+            key=lambda x: (
+                isinstance(ip_network(x.network), IPv6Network),
+                ip_network(x.network)))</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubnetMixin.all_subnets"><code class="name flex">
+<span>def <span class="ident">all_subnets</span></span>(<span>self) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return a list of all subnets with their index number</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def all_subnets(self) -&gt; List:
+    &#34;&#34;&#34;Return a list of all subnets with their index number&#34;&#34;&#34;
+    return [[index, entity] for index, entity in enumerate(self.subnets)]</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubnetMixin.delete_subnet"><code class="name flex">
+<span>def <span class="ident">delete_subnet</span></span>(<span>self, network: str) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Deletes the exact subnet from objects subnets.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_subnet(self, network: str) -&gt; None:
+    &#34;&#34;&#34;Deletes the exact subnet from objects subnets.&#34;&#34;&#34;
+    found_subnet = self.find_subnet(network)
+    if found_subnet:
+        self.subnets.remove(found_subnet)
+        return f&#39;Deleted {found_subnet}.&#39;
+    else:
+        return &#39;No subnet found&#39;</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.SubnetMixin.find_subnet"><code class="name flex">
+<span>def <span class="ident">find_subnet</span></span>(<span>self, network: str) ‑> Union[_ForwardRef('Subnet4'), _ForwardRef('Subnet6')]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the first exact match from objects subnets.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_subnet(self, network: str) -&gt; Union[&#39;Subnet4&#39;, &#39;Subnet6&#39;]:
+    &#34;&#34;&#34;Return the first exact match from objects subnets.&#34;&#34;&#34;
+    return next((x for x in self.subnets if x.network == network), None)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pyisc.dhcpd.mixin.ZoneMixin"><code class="flex name class">
+<span>class <span class="ident">ZoneMixin</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ZoneMixin:
+    def add_zone(self, zone: &#39;Zone&#39;):
+        self.zones.append(zone)
+
+    def find_zone(self, zone):
+        pass
+
+    def delete_zone(self, zone):
+        pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="pyisc.dhcpd.nodes.Global" href="nodes.html#pyisc.dhcpd.nodes.Global">Global</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pyisc.dhcpd.mixin.ZoneMixin.add_zone"><code class="name flex">
+<span>def <span class="ident">add_zone</span></span>(<span>self, zone: Zone)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_zone(self, zone: &#39;Zone&#39;):
+    self.zones.append(zone)</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.ZoneMixin.delete_zone"><code class="name flex">
+<span>def <span class="ident">delete_zone</span></span>(<span>self, zone)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_zone(self, zone):
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pyisc.dhcpd.mixin.ZoneMixin.find_zone"><code class="name flex">
+<span>def <span class="ident">find_zone</span></span>(<span>self, zone)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_zone(self, zone):
+    pass</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="pyisc.dhcpd" href="index.html">pyisc.dhcpd</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.ClassMixin" href="#pyisc.dhcpd.mixin.ClassMixin">ClassMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.ClassMixin.add_class" href="#pyisc.dhcpd.mixin.ClassMixin.add_class">add_class</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.ClassMixin.delete_class" href="#pyisc.dhcpd.mixin.ClassMixin.delete_class">delete_class</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.ClassMixin.find_class" href="#pyisc.dhcpd.mixin.ClassMixin.find_class">find_class</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.EventMixin" href="#pyisc.dhcpd.mixin.EventMixin">EventMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.EventMixin.add_event" href="#pyisc.dhcpd.mixin.EventMixin.add_event">add_event</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.EventMixin.delete_event" href="#pyisc.dhcpd.mixin.EventMixin.delete_event">delete_event</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.EventMixin.find_event" href="#pyisc.dhcpd.mixin.EventMixin.find_event">find_event</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.EventSetMixin" href="#pyisc.dhcpd.mixin.EventSetMixin">EventSetMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.EventSetMixin.add_event_set" href="#pyisc.dhcpd.mixin.EventSetMixin.add_event_set">add_event_set</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.EventSetMixin.delete_event_set" href="#pyisc.dhcpd.mixin.EventSetMixin.delete_event_set">delete_event_set</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.EventSetMixin.find_event_set" href="#pyisc.dhcpd.mixin.EventSetMixin.find_event_set">find_event_set</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.GroupMixin" href="#pyisc.dhcpd.mixin.GroupMixin">GroupMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.GroupMixin.add_group" href="#pyisc.dhcpd.mixin.GroupMixin.add_group">add_group</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.GroupMixin.delete_group" href="#pyisc.dhcpd.mixin.GroupMixin.delete_group">delete_group</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.GroupMixin.find_group" href="#pyisc.dhcpd.mixin.GroupMixin.find_group">find_group</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.HostMixin" href="#pyisc.dhcpd.mixin.HostMixin">HostMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.HostMixin.add_host" href="#pyisc.dhcpd.mixin.HostMixin.add_host">add_host</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.HostMixin.delete_host" href="#pyisc.dhcpd.mixin.HostMixin.delete_host">delete_host</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.HostMixin.find_host" href="#pyisc.dhcpd.mixin.HostMixin.find_host">find_host</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.IncludeMixin" href="#pyisc.dhcpd.mixin.IncludeMixin">IncludeMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.IncludeMixin.add_include" href="#pyisc.dhcpd.mixin.IncludeMixin.add_include">add_include</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.IncludeMixin.delete_include" href="#pyisc.dhcpd.mixin.IncludeMixin.delete_include">delete_include</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.IncludeMixin.find_include" href="#pyisc.dhcpd.mixin.IncludeMixin.find_include">find_include</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.KeyMixin" href="#pyisc.dhcpd.mixin.KeyMixin">KeyMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.KeyMixin.add_key" href="#pyisc.dhcpd.mixin.KeyMixin.add_key">add_key</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.KeyMixin.delete_key" href="#pyisc.dhcpd.mixin.KeyMixin.delete_key">delete_key</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.KeyMixin.find_key" href="#pyisc.dhcpd.mixin.KeyMixin.find_key">find_key</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.OptionMixin" href="#pyisc.dhcpd.mixin.OptionMixin">OptionMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.OptionMixin.add_option" href="#pyisc.dhcpd.mixin.OptionMixin.add_option">add_option</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.OptionMixin.delete_option" href="#pyisc.dhcpd.mixin.OptionMixin.delete_option">delete_option</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.OptionMixin.find_option" href="#pyisc.dhcpd.mixin.OptionMixin.find_option">find_option</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.Parameters" href="#pyisc.dhcpd.mixin.Parameters">Parameters</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.Permissions" href="#pyisc.dhcpd.mixin.Permissions">Permissions</a></code></h4>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.PoolMixin" href="#pyisc.dhcpd.mixin.PoolMixin">PoolMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.PoolMixin.add_pool" href="#pyisc.dhcpd.mixin.PoolMixin.add_pool">add_pool</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.PoolMixin.all_pools" href="#pyisc.dhcpd.mixin.PoolMixin.all_pools">all_pools</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.PoolMixin.delete_pool" href="#pyisc.dhcpd.mixin.PoolMixin.delete_pool">delete_pool</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.PoolMixin.find_pool" href="#pyisc.dhcpd.mixin.PoolMixin.find_pool">find_pool</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.RangeMixin" href="#pyisc.dhcpd.mixin.RangeMixin">RangeMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.RangeMixin.add_range" href="#pyisc.dhcpd.mixin.RangeMixin.add_range">add_range</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.RangeMixin.all_ranges" href="#pyisc.dhcpd.mixin.RangeMixin.all_ranges">all_ranges</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.RangeMixin.delete_range" href="#pyisc.dhcpd.mixin.RangeMixin.delete_range">delete_range</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.RangeMixin.find_range" href="#pyisc.dhcpd.mixin.RangeMixin.find_range">find_range</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.SharedNetworkMixin" href="#pyisc.dhcpd.mixin.SharedNetworkMixin">SharedNetworkMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.SharedNetworkMixin.add_shared_network" href="#pyisc.dhcpd.mixin.SharedNetworkMixin.add_shared_network">add_shared_network</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SharedNetworkMixin.delete_shared_network" href="#pyisc.dhcpd.mixin.SharedNetworkMixin.delete_shared_network">delete_shared_network</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SharedNetworkMixin.find_shared_network" href="#pyisc.dhcpd.mixin.SharedNetworkMixin.find_shared_network">find_shared_network</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.SubClassMixin" href="#pyisc.dhcpd.mixin.SubClassMixin">SubClassMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.SubClassMixin.add_subclass" href="#pyisc.dhcpd.mixin.SubClassMixin.add_subclass">add_subclass</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SubClassMixin.delete_subclass" href="#pyisc.dhcpd.mixin.SubClassMixin.delete_subclass">delete_subclass</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SubClassMixin.find_subclass" href="#pyisc.dhcpd.mixin.SubClassMixin.find_subclass">find_subclass</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.SubnetMixin" href="#pyisc.dhcpd.mixin.SubnetMixin">SubnetMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.SubnetMixin.add_subnet" href="#pyisc.dhcpd.mixin.SubnetMixin.add_subnet">add_subnet</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SubnetMixin.all_subnets" href="#pyisc.dhcpd.mixin.SubnetMixin.all_subnets">all_subnets</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SubnetMixin.delete_subnet" href="#pyisc.dhcpd.mixin.SubnetMixin.delete_subnet">delete_subnet</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.SubnetMixin.find_subnet" href="#pyisc.dhcpd.mixin.SubnetMixin.find_subnet">find_subnet</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pyisc.dhcpd.mixin.ZoneMixin" href="#pyisc.dhcpd.mixin.ZoneMixin">ZoneMixin</a></code></h4>
+<ul class="">
+<li><code><a title="pyisc.dhcpd.mixin.ZoneMixin.add_zone" href="#pyisc.dhcpd.mixin.ZoneMixin.add_zone">add_zone</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.ZoneMixin.delete_zone" href="#pyisc.dhcpd.mixin.ZoneMixin.delete_zone">delete_zone</a></code></li>
+<li><code><a title="pyisc.dhcpd.mixin.ZoneMixin.find_zone" href="#pyisc.dhcpd.mixin.ZoneMixin.find_zone">find_zone</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
